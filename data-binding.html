@@ -10,7 +10,7 @@
 
 <body>
   <div id="data_binding">
-    <h1>{{ message }}</h1>
+    <h1 v-bind:title="tagMessage">{{ message }}</h1>
     <p>Meu nome é {{ person.name }} e tenho {{ person.age }} anos.</p>
     <span v-html="tag"></span>
   </div>
@@ -26,7 +26,8 @@
           name: 'Mahonri',
           age: 30
         },
-        tag: '<button>Clique aqui</button>'
+        tag: '<button>Clique aqui</button>',
+        tagMessage: 'Essa é uma tag de título'
       }
     })
   </script>
