@@ -174,6 +174,14 @@ Informamos o valor do atributo na instância Vue. Passamos seu valor para o HTML
 Informamos o valor do texto na instância Vue. Manipulamos o valor do HTML usando  {{ identificador + expressão JS }}
 
 ### 013 - 13. Criando métodos
+Os métodos são funções que nos permitem realizar ações em nossa aplicação: interações com o usuário, manipulações de dados, etc.
+
+Para isso usamos a propriedade _methods_ da instância Vue e a diretiva _v-on_.
+
+É possível criar dois tipos de métodos: (1) métodos estáticos: que executam uma ação definida sem esperar parâmetros, e (2) métodos que esperam parâmetros.
+
+Para ver um exemplo veja o arquivo ```methods.html``` e no console do navegador invoque a função assim: ```app.reverseMessage()```.
+
 ### 014 - 14. Computed Properties
 ### 015 - 15. Computed Properties vs Métodos
 ### 016 - 16. Definindo novo valor para uma Computed Property
