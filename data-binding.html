@@ -11,15 +11,22 @@
 <body>
   <div id="data_binding">
     <h1>{{ message }}</h1>
+    <p>Meu nome é {{ person.name }} e tenho {{ person.age }} anos.</p>
+    <span v-html="tag"></span>
   </div>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
 
   <script>
     let app = new Vue({
       el: '#data_binding',
       data: {
-        message: 'Mensagem para ser exibida'
+        message: 'Mensagem para ser exibida.',
+        person: {
+          name: 'Mahonri',
+          age: 30
+        },
+        tag: '<button>Clique aqui</button>'
       }
     })
   </script>
