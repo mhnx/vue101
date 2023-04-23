@@ -1,14 +1,30 @@
-## Instalando via NPM
-A princípio esse projeto usa a versão 2.7.14.
-Para instalar digite o seguinte comando no seu terminal:
-
-```
-npm i vue@2.7.14
-```
 ## Seção 01: Introdução
-### 001 - 1. Boas Vindas
-### 002 - 2. A História do Vue
+Aqui eu vou documentar o que eu aprender do Vue, como comandos e conceitos e algumas pequenas explicações. Vamos lá!
 
+Site oficial: [https://vuejs.org/](https://vuejs.org/)
+
+Com as ferramentas certas, você pode construir qualquer coisa! Com a tecnologia certa, você consegue dar vida à suas visões! Desde 2014 milhões de desenvolvedores têm escolhido Vue por que ele tem tudo que você precisa para rapidamente criar e escalar produtos, seja você um freelancer, uma nova startup ou uma companhia de empreendimento madura. O Vue é uma tecnologia confiável que lhe dá as ferramentas certas para o trabalho não importa o quão grande você é.
+
+Por debaixo dos panos, o Vue tem um sistema reativo refinado combinado com renderização declarativa. Isso significa que o Vue faz muito do trabalho pesado por você. Por que o Vue é um framework progressivo você pode começar com a biblioteca principal (Core) e ir adicionando as peças que você precisa do seu ecossistema interconectado que conta com o seu próprio roteador (Vue Router), soluções de gerenciamento de estado (State Management), utilitários de teste (Testing Utils), uma interface de linha de comando (CLI) e mais.
+
+O Vue é projetado para parear com todas as outras tecnologias apropriadas como TypeScript dando a você e seu time a flexibilidade para usar o Vue da forma mais adequada para o seu fluxo de trabalho. Seu design cuidadoso impede que seus componentes sobre renderizem, mantendo sua aplicação com performance ao escalar. Ao invés de você ter que otimizar seu código, o Vue pega seu código e o otimiza de maneira inteligente ao compilar. Assim você renderiza rápido e permanece rápido. O Vue lhe devolve a liberdade para focar em se tornar criativo e continuar produtivo, desfrutando do processo de desenvolvimento novamente. Ao escolher o Vue, você está investindo numa tecnologia que é investida em você. Então convidamos você a se juntar à comunidade Vue.
+
+Ecossistema do Vue:
+
+- Server Side Rendering
+- Static Site Generation
+- Vue Router
+- Stage Management
+- IDE Support
+- Testing Utils
+- Build Toolchain
+
+### 001 - 1. Boas Vindas
+JavaScript é uma das linguagens que mais tem revolucionado nos últimos anos. E, por conta disso, 3 frameworks foram desenvolvidos e ganharam destaque: React, Angular e Vue.
+
+O Vue é usado para criar aplicações mais performáticas, que mantém o estado dos dados, carregando-os de maneira mais simples. Além disso o Vue com recursos como: **Two-way data binding** (vinculação de dados bidirecional), suas bibliotecas oficias **Vuex** e **Vue Router**.
+
+### 002 - 2. A História do Vue
 ## Seção 02: Preparando o ambiente
 ### 003 - 3. Instalando o Visual Studio Code
 ### 004 - 4. Instalando o Node.js
@@ -18,12 +34,145 @@ npm i vue@2.7.14
 ### 006 - 6. Download do Vue e Primeiro Exemplo
 ### 007 - 7. Download com CDN
 ### 008 - 8. Download com npm
+A instalação é simples. Pelo site do Vue dá pra baixar o arquivo vue.js ou pegar o link para o CDN.
+
+Uma terceira forma de instalar é pelo NPM. Essa forma é indicada para projetos em larga escala, com muitos componentes. O NPM traz o Webpack, que é o responsável por criar o bundle (arquivo final com os arquivos do projeto).
+
+A princípio esse projeto usa a versão 2.7.14.
+Para instalar digite o seguinte comando no seu terminal:
+
+```
+npm i vue@2.7.14
+```
 ### 009 - 9. Download com Yarn
+Podemos ainda instalar pelo Yarn, um gerenciador de pacotes criado pelo Facebook.
+
+A diferença entre o Yarn e o NPM é que o Yarn é mais rápido e mais seguro.
+
+```
+npm i -g yarn
+```
+
+```
+yarn add vue@2.7.14
+```
+
 ### 010 - 10. Download com vue-cli
+É uma ferramenta criada pelo próprio time desenvolvedor do Vue.
+
+Ele vai fazer todo o “trabalho sujo”. Assim a gente pode usar mais tempo desenvolvendo código sem se preocupar com detalhes de configurações de servidor, etc.
+
+```
+npm install -g @vue/cli
+# OU
+yarn global add @vue/cli
+```
+
+Para criar um app usamos o seguinte comando:
+```
+vue create first_app
+# DEPOIS
+cd first_app
+yarn serve
+```
+
+Isso vai abrir um servidor web para podermos visualizar o app que o CLI criou. É a partir dele que vamos criar o novo próprio projeto.
 
 ## Seção 04: Conceitos Fundamentais
 ### 011 - 11. Visão Geral da Seção
+#### Passagem de dados
+
+```
+new Vue({
+  data: {
+    name: 'Hello World!'
+  }
+})
+
+<h1>{{ name }}</h1>
+```
+
+#### Métodos
+
+```
+new Vue({
+  methods: {
+    changeName: function(newName) {
+      this.name = newName
+    }
+  }
+})
+
+<button v-on:click="changeName('Evan You')">Trocar nome</button>
+```
+
+#### Computed Properties (Propriedades computadas)
+
+```
+new Vue({
+  computed: {
+    valorEmPorcentagem: function() {
+      return this.valor + '%';
+    }
+  }
+})
+
+<p>{{ valorEmPorcentagem }}</p>
+```
+
+#### Watchers
+
+```
+new Vue({
+  watch: {
+    valor: function() {
+      // Alterando o valor da propriedade de maneira dinâmica
+    }
+  }
+})
+```
+
+#### Ciclo de vida da instância Vue
+
+```
+new Vue({
+  created: function() {
+    alert('A instância foi criada')
+  }
+})
+```
+
+#### Filtros
+
+```
+new Vue({
+  filters: {
+    toUpper: function(valor) {
+      return valor.toUpperCase();
+    }
+  }
+})
+
+<p>{{ valor | toUpper }}</p>
+```
+
 ### 012 - 12. Passagem de dados com o Vue
+**Por que usar?**
+É um dos fundamentos do Vue. Além disso facilita a comunicação do servidor com a interface (aplicação do lado do cliente) e vice-versa.
+
+**Como realizar a passagem de dados?**
+- 1 - Interpolação
+Informamos o valor do texto na instância Vue. Exibimos esse texto no HTML usando: {{ identificador }}
+
+- 2 - HTML
+Informamos o HTML puro na instância Vue. Exibimos HTML usando a diretiva _v-html_.
+
+- 3 - Atributos
+Informamos o valor do atributo na instância Vue. Passamos seu valor para o HTML usando a diretiva _v-bind:nome\_do\_atributo_.
+
+- 4 - Expressões JavaScript
+Informamos o valor do texto na instância Vue. Manipulamos o valor do HTML usando  {{ identificador + expressão JS }}
+
 ### 013 - 13. Criando métodos
 ### 014 - 14. Computed Properties
 ### 015 - 15. Computed Properties vs Métodos
