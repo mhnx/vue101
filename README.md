@@ -199,6 +199,11 @@ Ainda, as propriedades computadas _ficam em cache_. Seus valores são armazenado
 ### 016 - 16. Definindo novo valor para uma Computed Property
 Geralmente as propriedades computadas apenas retornam valores. No entanto, também é possível atribuir novos valores através de um objeto com os métodos ```get``` e ```set```.
 
+Acesse o arquivo ```computed-properties-set-value.html``` e digite no console do navegador o seguinte:
+```
+app.fullName = 'Mahonri Maia'
+```
+
 ### 017 - 17. Watchers
 ### 018 - 18. Ciclo de Vida do Vue
 ### 019 - 19. Trazendo dados ao renderizar a página
