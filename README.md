@@ -82,7 +82,7 @@ Isso vai abrir um servidor web para podermos visualizar o app que o CLI criou. �
 ### 011 - 11. Visão Geral da Seção
 #### Passagem de dados
 
-```
+```js
 new Vue({
   data: {
     name: 'Hello World!'
@@ -94,7 +94,7 @@ new Vue({
 
 #### Métodos
 
-```
+```js
 new Vue({
   methods: {
     changeName: function(newName) {
@@ -108,7 +108,7 @@ new Vue({
 
 #### Computed Properties (Propriedades computadas)
 
-```
+```js
 new Vue({
   computed: {
     valorEmPorcentagem: function() {
@@ -122,7 +122,7 @@ new Vue({
 
 #### Watchers
 
-```
+```js
 new Vue({
   watch: {
     valor: function() {
@@ -134,7 +134,7 @@ new Vue({
 
 #### Ciclo de vida da instância Vue
 
-```
+```js
 new Vue({
   created: function() {
     alert('A instância foi criada')
@@ -144,7 +144,7 @@ new Vue({
 
 #### Filtros
 
-```
+```js
 new Vue({
   filters: {
     toUpper: function(valor) {
@@ -218,6 +218,39 @@ O exemplo da criação de um _watcher_ será feito no arquivo: ```watchers.html`
 > Observe que se você puder usar _computed properties_ ao invés de _watchers_ você deve fazer isso para economizar recursos.
 
 ### 018 - 18. Ciclo de Vida do Vue
+O ciclo de vida de uma instância Vue envolve uma série de funções que são executadas em várias etapas da existência da instância, semelhante as etapas da vida humana.
+
+Há funções que são executadas antes, durante e após a aplicação ser montada no navegador para ser exibida ao usuário.
+
+Veja uma lista de funções que podem ser utilizadas nas diversas etapas do ciclo de vida de uma instância Vue:
+| Funções               | Descrição                                                                                                                                                                          |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ```beforeCreate()```  | Executada assim que a instância Vue é criada, mas antes dos dados, eventos e watchers estarem disponíveis.                                                                         |
+| ```created()```       | Executada assim que a instância Vue é criada. Tem à disposição os recursos básicos: dados, computed properties, events, watchers, etc. Contudo, a aplicação ainda não foi montada. |
+| ```beforeMount()```   | Executada um pouco antes do processo de montagem da aplicação começar.                                                                                                             |
+| ```mounted()```       | Chamada assim que o processo de montagem é finalizado, já tem acesso a propriedade this.el, para manipular o componente.                                                           |
+| ```beforeUpdate()```  | Chamada quando os dados são atualizados na página, mas antes dessas mudanças serem refletidas no HTML.                                                                             |
+| ```updated()```       | Chamada assim que o HTML é alterado devido à mudança de dados na instância Vue.                                                                                                    |
+| ```beforeDestroy()``` | Chamada antes da aplicação ser finalizada ou destruída.                                                                                                                            |
+| ```destroyed()```     | Chamada assim que a instância Vue é destruída. Nesse momento não é possível mais ter a cesso aos recursos do Vue.                                                                  |
+
+Exemplos:
+```js
+let app = new Vue({
+  created: function() {
+    console.log('A instância foi criada')
+  }
+})
+```
+
+```js
+let app = new Vue({
+  mounted: function() {
+    console.log('A aplicação foi montada')
+  }
+})
+```
+
 ### 019 - 19. Trazendo dados ao renderizar a página
 ### 020 - 20. Filtros
 ### 021 - 21. Conhecendo uma coleção de Filtros Personalizados

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciclo de Vida</title>
+</head>
+
+<body>
+  <div id="lifecycle">
+    <h1>Hello, {{ name }}!</h1>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+
+  <script>
+    let app = new Vue({
+      el: '#lifecycle',
+      data: {
+        name: 'Evan You'
+      },
+      beforeCreate() {
+        console.log('beforeCreate')
+      },
+      created() {
+        console.log('created')        
+      },
+      beforeMount() {
+        console.log('beforeMount')
+      },
+      mounted() {
+        console.log('mounted')
+      },
+      beforeUpdate() {
+        console.log('beforeUpdate')
+      },
+      updated() {
+        console.log('updated')
+      },
+      beforeDestroy() {
+        console.log('beforeDestroy')
+      },
+      destroyed() {
+        console.log('destroyed')
+      },
+    })
+  </script>
+</body>
+
+</html>
