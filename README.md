@@ -205,6 +205,18 @@ app.fullName = 'Mahonri Maia'
 ```
 
 ### 017 - 17. Watchers
+Um _watcher_ (observador) é um recurso do Vue que nos permite observar mudanças de valores em uma determinada propriedade.
+
+Quando a mudança é detectada uma ação é executada.
+
+É importante observar que os _watchers_ são a base do conceito da reatividade. O Vue utiliza os watchers por debaixo dos panos em muitas situações para atualizar dados no HTML assim que recebidos seja via console ou qualquer outro datasource.
+
+Para criar um _watcher_ usamos a propriedade ```watch``` da instância Vue. Dentro dela informamos o nome da propriedade que queremos monitorar e a função a ser executada.
+
+O exemplo da criação de um _watcher_ será feito no arquivo: ```watchers.html```. Nele usaremos a diretiva ```v-model```, que é muito usado em campos de formulário porque, quando informamos pra ele uma propriedade, ele fica de olho nela para fazer o _Two-way data binding_—ou seja, nós podemos definir o valor de uma propriedade dentro do input e isso já é atualizado na instância Vue.
+
+> Observe que se você puder usar _computed properties_ ao invés de _watchers_ você deve fazer isso para economizar recursos.
+
 ### 018 - 18. Ciclo de Vida do Vue
 ### 019 - 19. Trazendo dados ao renderizar a página
 ### 020 - 20. Filtros
