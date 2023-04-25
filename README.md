@@ -183,8 +183,22 @@ Para isso usamos a propriedade _methods_ da instância Vue e a diretiva _v-on_.
 Para ver um exemplo veja o arquivo ```methods.html``` e no console do navegador invoque a função assim: ```app.reverseMessage()```.
 
 ### 014 - 14. Computed Properties
+As propriedades computadas são uma maneira elegante de manipular nossos dados. As propriedades computadas nos permitem criar uma nova propriedade baseada em uma já existente.
+
+Para criar uma propriedade computada vamos utilizar a propriedade da instância Vue chamada de _computed_. Informamos esse valor através no HTML através de uma interpolação com o nome da propriedade computada criada; por exemplo: ```{{ computed_property }}```.
+
+> É importante que as propriedades computadas sejam fáceis de serem lidas.
+
 ### 015 - 15. Computed Properties vs Métodos
+Qual é a diferença?
+- Os métodos realizam ações, eventos.
+- As propriedades computadas manipulam dados.
+
+Ainda, as propriedades computadas _ficam em cache_. Seus valores são armazenados como sendo uma nova propriedade da instância Vue, sendo requisitadas apenas uma vez. Por conta disso, as propriedades computadas consomem menos memória, se comparadas aos métodos.
+
 ### 016 - 16. Definindo novo valor para uma Computed Property
+Geralmente as propriedades computadas apenas retornam valores. No entanto, também é possível atribuir novos valores através de um objeto com os métodos ```get``` e ```set```.
+
 ### 017 - 17. Watchers
 ### 018 - 18. Ciclo de Vida do Vue
 ### 019 - 19. Trazendo dados ao renderizar a página
