@@ -5,18 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diretivas: v-if e v-else/title>
+  <title>Diretivas: v-show</title>
 </head>
 
 <body>
   <div id="directives">
-    <h1 v-if="show">SpaceX leaks</h1>
-
-    <h3 v-if="tickets >= 50" key="available">Há ingressos disponíveis</h3>
-
-    <h3 v-else-if="tickets >= 1" key="almost">Os ingressos estão quase acabando</h3>
-
-    <h3 v-else key="unavailable">Os ingressos acabaram... :(</h3>
+    <h1 v-show="isLogged">Seja bem-vindo à Área Administrativa</h1>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
@@ -26,8 +20,7 @@
     let app = new Vue({
       el: '#directives',
       data: {
-        show: true,
-        tickets: 100
+        isLogged: true
       }
     })
   </script>

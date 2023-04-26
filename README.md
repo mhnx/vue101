@@ -354,6 +354,12 @@ Por exemplo:
 ```
 
 ### 025 - 24. v-show
+A diretiva ```v-show``` serve para determinar se uma tag/elemento deve ser exibido ou não com base em uma condição (condição simples ou expressão)—se a condição não for atendida, o elemento é removido da tela.
+
+**Como criar?**
+
+Informamos a condição dentro da tag com a diretiva ```v-show```. Além disso podemos definir dentro da instância Vue uma propriedade para ser usada na condição.
+
 ### 026 - 25. v-if vs v-show
 ### 027 - 26. v-text
 ### 028 - 27. v-html
