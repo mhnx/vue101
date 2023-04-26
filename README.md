@@ -460,7 +460,34 @@ Por exemplo, não devemos fazer o seguinte código:
 >
 ```
 
-### 032 - 31. Informando argumentos dinamicamente para ov-bind
+### 032 - 31. Informando argumentos dinamicamente para o v-bind
+A partir da versão 2.6 do Vue.js é possível informar os argumentos para a diretiva de forma dinâmica, se baseando em uma propriedade da instância Vue.
+
+Para isso basta informar a propriedade da instância Vue que vai substituir o atributo entre chaves ```[]``` e o nome da propriedade que vai conter o valor para o atributo do elemento HTML.
+
+Veja os códigos abaixo:
+```html
+<span title="título do span">Texto</span>
+```
+
+Substituindo o atributo e o valor por propriedades da instância Vue ficaria assim:
+```html
+<span :[atributo]="valor">Texto</span>
+```
+
+Onda na instância Vue conteria:
+```js
+let app = new Vue({
+  el: "#app",
+  data: {
+    atributo: 'title',
+    valor: 'título do span'
+  }
+})
+```
+
+> Observe que no código HTML a diretiva ```v-bind``` foi abreviada.
+
 ### 033 - 32. v-model
 ### 034 - 33. v-on
 ### 035 - 34. Usando o v-on para filtrar uma listadinamicamente

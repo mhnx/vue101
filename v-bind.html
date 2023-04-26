@@ -12,6 +12,10 @@
   <div id="directives">
     <h2>Acess o site abaixo:</h2>
     <a v-bind:href="url" target="_blank">Web design no Dribbble</a>
+
+    <p :[arg]="value">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ut nulla porro, eum, quaerat eligendi voluptatem facere provident debitis hic cumque eius ad labore aspernatur culpa fuga unde. Cupiditate, iure.
+    </p>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
@@ -20,7 +24,9 @@
     let app = new Vue({
       el: '#directives',
       data: {
-        url: 'https://dribbble.com/shots/popular/web-design'
+        url: 'https://dribbble.com/shots/popular/web-design',
+        arg: 'title',
+        value: 'Parágrafo de exemplo'
       }
     })
   </script>
