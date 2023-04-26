@@ -430,6 +430,36 @@ Por exemplo: ```v-for="item in propriedade"```
 Podemos acessar também o índice do array ou o nome da propriedade do objeto.
 
 ### 031 - 30. v-bind
+**Qual sua função?**
+
+Vincular o valor de qualquer propriedade a uma variável do Vue.
+
+Com isso podemos fazer com que importantes atributos como ```href```, ```src```, ```class```, etc, se tornem dinâmicos.
+
+**Como criar?**
+
+Informamos a diretiva ```v-bind``` na tag que desejamos informar o atributo.
+
+Por exemplo: ```v-bind:href="linkSite"```
+
+Essa diretiva possui uma forma abreviada de ser chamada, apenas informando ```:``` (dois pontos) e o atributo que queremos tornar dinâmico.
+
+Por exemplo: ```:src="imgSrc"```
+
+**Como criar?**
+
+É importante manter um padrão quando chamarmos a forma abreviada das diretivas.
+
+Se chamarmos uma forma abreviada, devemos usá-la sempre no contexto, mas não misturá-la com a forma convencional.
+
+Por exemplo, não devemos fazer o seguinte código:
+```html
+<input
+  v-bind:value="valor"
+  :placeholder="valor2"
+>
+```
+
 ### 032 - 31. Informando argumentos dinamicamente para ov-bind
 ### 033 - 32. v-model
 ### 034 - 33. v-on
