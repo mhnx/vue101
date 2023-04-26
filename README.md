@@ -252,6 +252,36 @@ let app = new Vue({
 ```
 
 ### 019 - 19. Trazendo dados ao renderizar a página
+No arquivo ```lifecycle.html``` foram adicionados os seguintes trechos de código para exemplificar a renderização de dados vindos de outra fonte:
+
+```html
+...
+<ul>
+  <li v-for="state in states">{{ state.nome }}</li>
+</ul>
+```
+```js
+data: {
+  ...
+  states: []
+}
+```
+```js
+...
+created() {
+  fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response => {
+    response.json().then(data => {
+      this.states = data;
+    })
+  }).catch(err => {
+    console.log(err)
+  })
+}
+...
+```
+
+Vide commit: "Renderização de dados usando fetch e a diretiva v-for"
+
 ### 020 - 20. Filtros
 ### 021 - 21. Conhecendo uma coleção de Filtros Personalizados
 ### 022 - Teste 1: Você se Lembra? Conceitos Fundamentais
