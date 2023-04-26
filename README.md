@@ -396,7 +396,24 @@ Informamos o nome da propriedade na diretiva ```v-html```. Por exemplo: ```v-htm
 
 Observe que é necessário criar a propriedade com o mesmo nome na instância Vue (no objeto ```data```) contendo o HTML que queremos exibir.
 
+**Cuidado**
+> A renderização dinâmica do HTML é uma porta aberta para ataques XSS. Use essa diretiva em ambientes seguros e com cautela!
+
 ### 029 - 28. v-once
+**Qual sua função?**
+
+Exibir o valor de uma propriedade da instância Vue **apenas uma vez**.
+
+Deixa o elemento estático, podendo contribuir na melhoria da performance do site.
+
+**Como criar?**
+
+Informamos a diretiva ```v-once``` na tag que desejamos deixar estática (não espera parâmetros).
+
+Por exemplo: ```<a v-once>{{ propriedade }}</a>```
+
+Ao atualizar o valor de uma propriedade no console, por exemplo, a propriedade não é atualizada no HTML dinamicamente pois o elemento que possui a diretiva ```v-once``` se tornou um elemento estático.
+
 ### 030 - 29. v-for
 ### 031 - 30. v-bind
 ### 032 - 31. Informando argumentos dinamicamente para ov-bind
