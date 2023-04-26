@@ -373,6 +373,16 @@ O ```v-if``` é mais lento. Exige mais do servidor pois sempre recria o elemento
 O ```v-show``` é mais leve. Exige do servidor para renderizar o elemento apenas da primeira vez. Use-o quando a condição de exibição mudar constantemente.
 
 ### 027 - 26. v-text
+A diretiva ```v-text``` serve para exibir o valor de uma propriedade da instância Vue no HTML. Note que essa diretiva possui o mesmo efeito da interpolação.
+
+Na verdade, quando utilizamos a interpolação, o Vue usa a diretiva ```v-text``` por debaixo dos panos.
+
+**Como criar?**
+
+Informamos o nome da propriedade na diretiva ```v-text```. Por exemplo: ```v-text="propriedade"```.
+
+Observe que é necessário criar a propriedade com o mesmo nome na instância Vue (no objeto ```data```).
+
 ### 028 - 27. v-html
 ### 029 - 28. v-once
 ### 030 - 29. v-for
