@@ -317,7 +317,7 @@ Vamos utilizar a biblioteca [vue2-filters](https://www.npmjs.com/package/vue2-fi
 <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
 ```
 
-Para ver um exemplo veja o arquivo ```filters.html``` e no console do navegador altere o valor da varíavel ```name``` assim: ```app.name = ''```.
+Para ver um exemplo veja o arquivo ```filters.html``` e no console do navegador altere o valor da variável ```name``` assim: ```app.name = ''```.
 
 > Nessa aula vimos os filtros: ````placeholder```, ```truncate``` e ```pluralize```.
 
@@ -325,6 +325,12 @@ Para ver um exemplo veja o arquivo ```filters.html``` e no console do navegador 
 
 ## Seção 05: Diretivas
 ### 023 - 22. Visão Geral da Seção
+Diretiva significa instrução ou norma que deve ser seguida.
+
+No Vue.js, uma diretiva informa a um elemento HTML quais ações ele deve executar.
+
+Uma diretiva é informada como um atributo HTML normal, na tag de abertura do elemento. Ela é prefixada com ```v-```, deixando claro que é um atributo específico do Vue.
+
 ### 024 - 23. v-if e v-else
 ### 025 - 24. v-show
 ### 026 - 25. v-if vs v-show
