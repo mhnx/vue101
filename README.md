@@ -332,6 +332,27 @@ No Vue.js, uma diretiva informa a um elemento HTML quais ações ele deve execut
 Uma diretiva é informada como um atributo HTML normal, na tag de abertura do elemento. Ela é prefixada com ```v-```, deixando claro que é um atributo específico do Vue.
 
 ### 024 - 23. v-if e v-else
+A diretiva ```v-if``` serve para determinar se uma tag/elemento deve ser exibido ou não com base em uma condição (condição simples ou expressão)—se a condição não for atendida, o elemento é removido da tela.
+
+**Como criar?**
+
+Informamos a condição dentro da tag com as diretivas ```v-if```, ```v-else``` ou ```v-else-if```. Além disso podemos definir dentro da instância Vue uma propriedade para ser usada na condição.
+
+**Boas Práticas**
+
+Quando usamos ```v-if```, ```v-else``` em elementos diferentes, é interessante adicionar o atributo ```key``` em cada um deles, evitando conflitos de renderização.
+
+Por exemplo:
+```html
+<div v-if="condicao" key="success">
+  Sucesso
+</div>
+
+<div v-else key="error">
+  Erro
+</div>
+```
+
 ### 025 - 24. v-show
 ### 026 - 25. v-if vs v-show
 ### 027 - 26. v-text
