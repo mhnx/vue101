@@ -415,6 +415,20 @@ Por exemplo: ```<a v-once>{{ propriedade }}</a>```
 Ao atualizar o valor de uma propriedade no console, por exemplo, a propriedade não é atualizada no HTML dinamicamente pois o elemento que possui a diretiva ```v-once``` se tornou um elemento estático.
 
 ### 030 - 29. v-for
+**Qual sua função?**
+
+A diretiva ```v-for``` é usada para exibir uma quantidade maior de informações, levando em conta uma lista de propriedades.
+
+Falando de outra forma, ela é usada para percorrer um array ou objeto com esses valores e exibir em uma tag repetidas vezes.
+
+**Como criar?**
+
+Informamos a diretiva ```v-for``` na tag que desejamos repetir.
+
+Por exemplo: ```v-for="item in propriedade"```
+
+Podemos acessar também o índice do array ou o nome da propriedade do objeto.
+
 ### 031 - 30. v-bind
 ### 032 - 31. Informando argumentos dinamicamente para ov-bind
 ### 033 - 32. v-model

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diretivas: v-for</title>
+</head>
+
+<body>
+  <div id="directives">
+    <h3 v-for="fields in person">{{ fields }}</h3>
+    <ul>
+      <li v-for="number in numbers" v-text="number"></li>
+    </ul>
+    <ol>
+      <li v-for="city in cities">{{ city.city }} - {{ city.country }}</li>
+    </ol>
+    <p v-for="(drama, index) in doramas">{{ index }}. {{ drama }}</p>
+
+    <h2>Empresa</h2>
+    <p v-for="(value, key, index) in company">{{ index }} - {{ key }}: {{ value }}</p>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+
+  <script>
+    let app = new Vue({
+      el: '#directives',
+      data: {
+        person: {
+          name: 'Evan You',
+          age: 36,
+          country: 'Singapore'
+        },
+        numbers: [0, 1, 2, 3, 4, 5],
+        cities: [
+          {
+            city: 'St. Paul',
+            country: 'Brazil'
+          },
+          {
+            city: 'Tokyo',
+            country: 'Japan'
+          },
+          {
+            city: 'London',
+            country: 'England'
+          },
+          {
+            city: 'Copenhagen',
+            country: 'Denmark'
+          }
+        ],
+        doramas: [
+          'O Rei de Porcelana',
+          'Hometown Cha Cha Cha',
+          'Pousando no Amor',          
+          'Uma Advogada Extraordinária',
+          'Alquimia das Almas',
+          'Pretendente Surpresa',
+          'Nosso Eterno Verão',
+          'Clima do Amor',
+          'Agência de Celebridades',
+          'As Três Irmãs',
+          'Intensivão do Amor'          
+        ],
+        company: {
+          name: 'Facebook',
+          year: 2004,
+          founder: 'Mark Zuckerberg'
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
