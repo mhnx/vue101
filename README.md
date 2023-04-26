@@ -361,6 +361,17 @@ A diretiva ```v-show``` serve para determinar se uma tag/elemento deve ser exibi
 Informamos a condição dentro da tag com a diretiva ```v-show```. Além disso podemos definir dentro da instância Vue uma propriedade para ser usada na condição.
 
 ### 026 - 25. v-if vs v-show
+**Qual é a diferença entre ```v-if``` e ```v-show```?**
+
+- ```v-if```: **Insere ou remove** um elemento.
+- ```v-show```: **Exibe ou esconde** um elemento (muda a propriedade CSS _display_ da tag).
+
+**Como usar um ou outro?**
+
+O ```v-if``` é mais lento. Exige mais do servidor pois sempre recria o elemento. Use-o quando for improvável que a condição de exibição mude constantemente.
+
+O ```v-show``` é mais leve. Exige do servidor para renderizar o elemento apenas da primeira vez. Use-o quando a condição de exibição mudar constantemente.
+
 ### 027 - 26. v-text
 ### 028 - 27. v-html
 ### 029 - 28. v-once
