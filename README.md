@@ -283,6 +283,33 @@ created() {
 Vide commit: "Renderização de dados usando fetch e a diretiva v-for"
 
 ### 020 - 20. Filtros
+Filtros são uma maneira de formatar os dados que informamos em uma página. Ou seja, os dados não são alterados, mas sim a forma como eles são exibidos.
+
+**Como criar?**
+No JavaScript, informamos a propriedade ```filters``` na instância Vue. Cada filtro será uma função.
+
+Usamos uma barra vertical (```|```) e, em seguida, o nome do filtro para aplicá-lo.
+
+Por exemplo:
+```js
+let app = new Vue({
+  filters: {
+    meu_filtro1: function() {
+      // Transformação dos dados e seu returno
+    },
+    meu_filtro2: function() {
+      // Transformação dos dados e seu returno
+    }
+  }
+})
+```
+
+```html
+<p>{{ variavel | meu_filtro1 | meu_filtro2 }}</p>
+```
+
+> É possível aplicar mais de um filtro. Lembre que o segundo filtro vai transformar o dado depois de transformado pelo primeiro filtro.
+
 ### 021 - 21. Conhecendo uma coleção de Filtros Personalizados
 ### 022 - Teste 1: Você se Lembra? Conceitos Fundamentais
 
