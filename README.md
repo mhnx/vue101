@@ -384,6 +384,18 @@ Informamos o nome da propriedade na diretiva ```v-text```. Por exemplo: ```v-tex
 Observe que é necessário criar a propriedade com o mesmo nome na instância Vue (no objeto ```data```).
 
 ### 028 - 27. v-html
+**Qual sua função?**
+
+Interpretar e exibir o valor HTML puro vindo de uma propriedade da instância Vue (Não é interpredado como um template Vue).
+
+> Ele altera a propriedade ```innerHTML``` de uma tag.
+
+**Como criar?**
+
+Informamos o nome da propriedade na diretiva ```v-html```. Por exemplo: ```v-html="propriedade"```.
+
+Observe que é necessário criar a propriedade com o mesmo nome na instância Vue (no objeto ```data```) contendo o HTML que queremos exibir.
+
 ### 029 - 28. v-once
 ### 030 - 29. v-for
 ### 031 - 30. v-bind
