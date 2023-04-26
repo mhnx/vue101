@@ -311,6 +311,16 @@ let app = new Vue({
 > É possível aplicar mais de um filtro. Lembre que o segundo filtro vai transformar o dado depois de transformado pelo primeiro filtro.
 
 ### 021 - 21. Conhecendo uma coleção de Filtros Personalizados
+Vamos utilizar a biblioteca [vue2-filters](https://www.npmjs.com/package/vue2-filters).
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+```
+
+Para ver um exemplo veja o arquivo ```filters.html``` e no console do navegador altere o valor da varíavel ```name``` assim: ```app.name = ''```.
+
+> Nessa aula vimos os filtros: ````placeholder```, ```truncate``` e ```pluralize```.
+
 ### 022 - Teste 1: Você se Lembra? Conceitos Fundamentais
 
 ## Seção 05: Diretivas
