@@ -463,7 +463,7 @@ Por exemplo, não devemos fazer o seguinte código:
 ### 032 - 31. Informando argumentos dinamicamente para o v-bind
 A partir da versão 2.6 do Vue.js é possível informar os argumentos para a diretiva de forma dinâmica, se baseando em uma propriedade da instância Vue.
 
-Para isso basta informar a propriedade da instância Vue que vai substituir o atributo entre chaves ```[]``` e o nome da propriedade que vai conter o valor para o atributo do elemento HTML.
+Para isso basta informar a propriedade da instância Vue que vai substituir o atributo entre colchetes ```[]``` e o nome da propriedade que vai conter o valor para o atributo do elemento HTML.
 
 Veja os códigos abaixo:
 ```html
@@ -521,14 +521,62 @@ Modificadores são propriedades que podemos informar junto com o ```v-model```. 
 3 - ```.lazy``` -> Define que os eventos de mudança (change) serão ouvidos.
 
 ### 034 - 33. v-on
-### 035 - 34. Usando o v-on para filtrar uma listadinamicamente
+**Qual sua função?**
+
+1 - Criar um ouvinte de evento. Isso é importante para que a aplicação fique mais reativa.
+2 - Criar eventos personalizados, principalmente no contexto de componentes.
+
+**Como criar?**
+
+Informamos a diretiva ```v-on``` na tag que desejamos aplicar o evento, junto com o nome dele.
+
+Exemplo: ```v-on:click="metodo"```
+
+Essa diretiva possui uma forma abrevidada de ser chamada, apenas informando ```@``` (arroba) e o nome do evento que queremos definir.
+
+Exemplo: ```@keyup="metodo"```
+
+**Boas práticas**
+
+É importante manter um padrão quando chamarmos a forma abreviada das diretivas.
+
+Se chamarmos uma forma abreviada, devemos usá-la sempre no contexto, mas não misturá-la com a forma convencional.
+
+Por exemplo, não devemos fazer o seguinte código:
+```html
+<input
+  v-on:mouseenter="metodo1"
+  @click="metodo2"
+>
+```
+
+**O que podemos informar para a diretiva?**
+
+1 - O nome de um método
+```v-on:click="nomeDoMetodo```
+
+2 - Uma expressão JavaScript
+```@dblclick="alert('Hello World')"```
+
+3 - Até mesmo não informar nada, se estivermos usando um modificador.
+```@click.prevent```
+
+**Argumentos dinâmicos (novidade da versão 2.6 do Vue)**
+
+Agora também é possível informar os argumentos para a diretiva de maneira dinâmica, se baseando em uma propriedade da instância Vue.
+
+Para isso, basta informar ```[]``` (colchetes) no lugar de um argumento.
+
+Por exemplo: ```v-on:[propriedade]="metodo"```
+
+### 035 - 34. Usando o v-on para filtrar uma lista dinamicamente
 ### 036 - 35. v-slot
 ### 037 - 36. v-pre
 ### 038 - 37. v-cloak
 ### 039 - 38. Criando Diretivas Personalizadas
 ### 040 - 39. Funções para Criação de Diretivas
-### 041 - 40. Parâmetros para uma DiretivaPersonalizada
-### 042 - 41. Diretivas Personalizadas - ArgumentosDinâmicos
+### 041 - 40. Parâmetros para uma Diretiva Personalizada
+### 042 - 41. Diretivas Personalizadas - Argumentos Dinâmicos
 ### 043 - 42. Diretivas Personalizadas - Recebendo váriosvalores
 ### 044 - Teste 2: Você se Lembra? Diretivas
 
@@ -573,7 +621,7 @@ Modificadores são propriedades que podemos informar junto com o ```v-model```. 
 
 ## Seção 10: Desafio 2 - Criando Uma Página De Login
 ### 076 - 71. Apresentação do Desafio
-### 077 - 72. Adicionando o Vue e configurandotransição
+### 077 - 72. Adicionando o Vue e configurando transição
 ### 078 - 73. Programando envio do formulário e mensagem desucesso
 ### 079 - 74. Código Final do Projeto
 
@@ -612,7 +660,7 @@ Modificadores são propriedades que podemos informar junto com o ```v-model```. 
 ### 109 - 103. Praticando: State
 ### 110 - 104. Getters
 ### 111 - 105. Praticando: Getters
-### 112 - 106. Praticando: Carregando notícias usandoGetters
+### 112 - 106. Praticando: Carregando notícias usando Getters
 ### 113 - 107. Mutations
 ### 114 - 108. Praticando: Mutations
 ### 115 - 109. Actions
@@ -629,8 +677,8 @@ Modificadores são propriedades que podemos informar junto com o ```v-model```. 
 ### 124 - 117. Praticando: Criando rotas
 ### 125 - 118. Métodos para navegação
 ### 126 - 119. Praticando: Métodos para navegação
-### 127 - 120. Informando parâmetros para asrotas
-### 128 - 121. Praticando: Informando parâmetros para a rotade
+### 127 - 120. Informando parâmetros para as rotas
+### 128 - 121. Praticando: Informando parâmetros para a rota de notícias
 ### 129 - 122. Criando rotas filhas
 ### 130 - 123. Criando nomes para as Rotas
 ### 131 - 124. Praticando: Criando nomes para asRotas
@@ -643,9 +691,9 @@ Modificadores são propriedades que podemos informar junto com o ```v-model```. 
 ### 138 - 131. Navigation Guards - Global
 ### 139 - 132. Navigation Guards - Local
 ### 140 - 133. Navigation Guards - Componentes
-### 141 - 134. Praticando: Criando validação pararenderização de um
+### 141 - 134. Praticando: Criando validação para renderização de um componente
 ### 142 - 135. Transições entre as rotas
-### 143 - 136. Praticando: Transições entre asrotas
+### 143 - 136. Praticando: Transições entre as rotas
 ### 144 - Teste 8: Você se Lembra? Vue Router
 
 ## Seção 14: Conclusão
