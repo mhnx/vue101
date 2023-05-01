@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diretivas: v-slot</title>
+</head>
+
+<body>
+  <div id="directives">
+    <text-component>
+      <template v-slot:header>
+        <h2>Esse é o cabeçalho</h2>
+      </template>
+
+      Primeiro componente
+    </text-component>
+    <text-component>
+      <template v-slot:header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" height="78px" style="display: block; margin: auto;">
+      </template>
+
+      <template #paragraph>
+        Este é o conteúdo do parágrafo da segunda instância do componente.
+
+        Estou usando a forma abreviada da diretiva v-slot para fins didáticos.
+      </template>
+
+      Segundo componente
+    </text-component>
+    <text-component>
+      <template v-slot:header>
+        <i>Este é o texto do cabeçalho da terceira instância do text-component</i>
+      </template>
+      Terceiro componente
+    </text-component>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+
+  <script>
+    Vue.component('text-component', {
+      template: `
+        <div>
+          <header>
+            <slot name="header"></slot>
+          </header>
+          <p>
+            <slot name="paragraph"></slot>
+          </p>
+          <span>
+            <slot></slot>
+          </span>
+        </div>
+      `
+    })
+
+    let app = new Vue({
+      el: '#directives',
+      data: {
+      }
+    })
+  </script>
+</body>
+
+</html>

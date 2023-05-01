@@ -570,7 +570,38 @@ Para isso, basta informar ```[]``` (colchetes) no lugar de um argumento.
 Por exemplo: ```v-on:[propriedade]="metodo"```
 
 ### 035 - 34. Usando o v-on para filtrar uma lista dinamicamente
+Vide exemplo no arquivo ```v-on.html```.
+
 ### 036 - 35. v-slot
+
+**Qual sua função?**
+
+Diretiva usada com componentes.
+
+Usada para inserir conteúdo em um componente, através da tag ```<template>```.
+
+**Como criar?**
+
+Informamos a diretiva ```v-slot``` na tag que desejamos adicionar conteúdo, junto com seu nome como argumento.
+
+Exemplo: ```v-slot:div```
+
+Essa diretiva possui uma forma abreviada de ser chamada, apenas informando ```#``` (cerquilha ou hashtag) e o nome do slot que queremos definir.
+
+Exemplo: ```#footer```
+
+**Boas práticas**
+
+É importante manter um padrão quando chamarmos a forma abreviada das diretivas.
+
+Se chamarmos uma forma abreviada, devemos usá-la sempre no contexto, mas não misturá-la com a forma convencional.
+
+Por exemplo, não devemos fazer o seguinte código:
+```html
+<template v-slot:cabecalho>
+<template #site>
+```
+
 ### 037 - 36. v-pre
 ### 038 - 37. v-cloak
 ### 039 - 38. Criando Diretivas Personalizadas
