@@ -446,7 +446,7 @@ Essa diretiva possui uma forma abreviada de ser chamada, apenas informando ```:`
 
 Por exemplo: ```:src="imgSrc"```
 
-**Como criar?**
+**Boas práticas**
 
 É importante manter um padrão quando chamarmos a forma abreviada das diretivas.
 
@@ -475,7 +475,7 @@ Substituindo o atributo e o valor por propriedades da instância Vue ficaria ass
 <span :[atributo]="valor">Texto</span>
 ```
 
-Onda na instância Vue conteria:
+Onde na instância Vue conteria:
 ```js
 let app = new Vue({
   el: "#app",
@@ -489,6 +489,37 @@ let app = new Vue({
 > Observe que no código HTML a diretiva ```v-bind``` foi abreviada.
 
 ### 033 - 32. v-model
+**Qual sua função?**
+
+Realizar uma ligação de dados bidirecional (o _two-way data binding_).
+
+Com isso, ao alterar o valor de uma propriedade na camada view, também estaremos alterando o valor original desta mesma propriedade.
+
+**Como podemos usar?**
+
+Podemos usar o ```v-model``` em 4 elementos:
+1. Na tag _<input>_;
+2. Na tag _<select>_;
+3. Na tag _<textarea>_;
+4. Em componentes.
+
+**Como criar?**
+
+Informamos a diretiva ```v-model``` na tag que desejamos realizar o _two-way data binding_.
+
+Exemplo:
+```html
+<input type="text" v-model="message">
+```
+
+**Modificadores**
+
+Modificadores são propriedades que podemos informar junto com o ```v-model```. Elas são funções específicas, que podem ser muito úteis.
+
+1 - ```.number``` -> Transforma o valor da propriedade de string para número.
+2 - ```.trim``` -> Remove os espaços antes e depois da propriedade.
+3 - ```.lazy``` -> Define que os eventos de mudança (change) serão ouvidos.
+
 ### 034 - 33. v-on
 ### 035 - 34. Usando o v-on para filtrar uma listadinamicamente
 ### 036 - 35. v-slot
