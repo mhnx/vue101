@@ -13,6 +13,14 @@
     <p v-on:click="reverseMessage">{{ message }}</p>
 
     <h4 v-on:[eventname]="reverseMessage">{{ message }}</h4>
+
+    <hr>
+
+    <input type="text" placeholder="Filtrar pessoas" v-on:keyup="filterPeople">
+    
+    <ul>
+      <li v-for="person in filteredPeople">{{ person }}</li>
+    </ul>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
@@ -22,12 +30,33 @@
       el: '#directives',
       data: {
         message: 'Vue.js é demais!',
-        eventname: 'click' // poderia usar também 'mouseenter' ou 'dblclick'
+        eventname: 'click', // poderia usar também 'mouseenter' ou 'dblclick'
+        people: [
+          'Bernard Arnault',
+          'Elon Musk',
+          'Jeff Bezos',
+          'Larry Ellison',
+          'Warren Buffett',
+          'Bill Gates',
+          'Carlos Slim',
+          'Steve Ballmer',
+          'Francoise Bettencourt',
+          'Michael Bloomberg'
+        ],
+        filteredPeople: []
       },
       methods: {
         reverseMessage() {
           this.message = this.message.split('').reverse().join('')
+        },
+        filterPeople(event) {
+          this.filteredPeople = this.people.filter(name => {
+            return name.toUpperCase().includes(event.target.value.toUpperCase())
+          })
         }
+      },
+      created() {
+        this.filteredPeople = this.people
       }
     })
   </script>
