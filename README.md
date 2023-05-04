@@ -498,9 +498,9 @@ Com isso, ao alterar o valor de uma propriedade na camada view, também estaremo
 **Como podemos usar?**
 
 Podemos usar o ```v-model``` em 4 elementos:
-1. Na tag _<input>_;
-2. Na tag _<select>_;
-3. Na tag _<textarea>_;
+1. Na tag _\<input>_;
+2. Na tag _\<select>_;
+3. Na tag _\<textarea>_;
 4. Em componentes.
 
 **Como criar?**
@@ -625,6 +625,30 @@ Essa diretiva não espera nenhum argumento.
 O exemplo acima irá imprimir no navegador o texto "{{ name }}".
 
 ### 038 - 37. v-cloak
+**Qual sua função?**
+
+Garantir que os elementos serão exibidos apenas quando a instância Vue for completamente carregada.
+
+Evitar que a página fique desestruturada ("quebrada") enquanto ocorre o carregamento.
+
+**Como criar?**
+
+Informamos a diretiva ```v-cloak``` na tag que desejamos aplicar a inteligência de espera.
+
+Exemplo:  
+```<h1 v-cloak>Seja bem-vindo, {{ name }}!</h1>```
+
+> Essa diretiva não espera argumentos!
+
+**A importância do CSS**
+
+Para um funcionamento completo, é necessário adicionar um estilo CSS em nosso código, ocultando o elemento até o carregamento da página.
+```css
+[v-cloak] {
+  display: none;
+}
+```
+
 ### 039 - 38. Criando Diretivas Personalizadas
 ### 040 - 39. Funções para Criação de Diretivas
 ### 041 - 40. Parâmetros para uma Diretiva Personalizada
