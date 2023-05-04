@@ -603,6 +603,27 @@ Por exemplo, não devemos fazer o seguinte código:
 ```
 
 ### 037 - 36. v-pre
+**Qual sua função?**
+
+Desabilitar a compilação Vue no elemento em que for aplicado. Em outras palavras, o Vue deixa de funcionar no elemento especificado. 
+
+Observe que o ```v-once``` tem um comportamento similar.
+
+**Por que usar?**
+
+1 - Se desejarmos exibir as chaves de interpolação de variável no navegador.
+2 - Se desejarmos aumentar a performance para renderizar nossa aplicação.
+
+**Como criar?**
+
+Informamos a diretiva ```v-pre``` na tag que desejamos desabilitar.
+
+Exemplo: ```<h2 v-pre>{{ name }}</h2>```
+
+Essa diretiva não espera nenhum argumento.
+
+O exemplo acima irá imprimir no navegador o texto "{{ name }}".
+
 ### 038 - 37. v-cloak
 ### 039 - 38. Criando Diretivas Personalizadas
 ### 040 - 39. Funções para Criação de Diretivas
