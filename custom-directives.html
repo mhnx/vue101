@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diretivas personalizadas</title>  
+</head>
+
+<body>
+  <div id="directives">
+    <span v-bold v-italic>Lorem ipsum</span>    
+    <p v-capitalize>
+      hello super mario world jr!
+    </p>
+    <p v-capitalize>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ipsa est, magnam vero repellendus odio perspiciatis autem recusandae qui consequatur facere provident, vitae, eligendi culpa labore tempora. Voluptatem, tempore deleniti?
+    </p>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+
+  <script>
+    Vue.directive('italic', {
+      inserted: function(el) {
+        el.style.fontStyle = 'italic'
+      }
+    })
+
+    let app = new Vue({
+      el: '#directives',
+      data: {
+      },
+      directives: {
+        bold: {
+          inserted: function(el) {
+            el.style.fontWeight = 700
+          }
+        },
+        capitalize: function(el) {
+          let words = el.innerText.split(' ')
+          words.forEach((text, index) => {
+            words[index] = text.charAt(0).toUpperCase() + text.slice(1)
+          })
+          el.innerText = words.join(' ')
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

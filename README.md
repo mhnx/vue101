@@ -650,6 +650,39 @@ Para um funcionamento completo, é necessário adicionar um estilo CSS em nosso 
 ```
 
 ### 039 - 38. Criando Diretivas Personalizadas
+**Quando é necessário?**
+
+Em algumas situações, talvez as diretivas padrão do Vue não atendam à nossa necessidade.
+
+Nesses casos podemos criar nossas próprias diretivas.
+
+**Como criar?**
+
+1 - Globalmente (usando um método da instância Vue)
+```js
+Vue.directive('nome-diretiva', {})
+```
+
+2 - Localmente (usando a propriedade dentro da instância Vue)
+```js
+new Vue({
+  directives: { }
+})
+```
+
+Por exemplo:
+```js
+Vue.directive('white', {
+  inserted: function(elemento) {
+    elemento.style.color = 'white'
+  }  
+})
+```
+
+```html
+<p v-white>Hello World</p>
+```
+
 ### 040 - 39. Funções para Criação de Diretivas
 ### 041 - 40. Parâmetros para uma Diretiva Personalizada
 ### 042 - 41. Diretivas Personalizadas - Argumentos Dinâmicos
