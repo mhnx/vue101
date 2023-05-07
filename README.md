@@ -684,16 +684,42 @@ Vue.directive('white', {
 ```
 
 ### 040 - 39. Funções para Criação de Diretivas
+**Possíveis funções ao criar uma diretiva**
+
+1. ```bind()```: chamada quando a diretiva é vinculada a um elemento.
+2. ```inserted()```: chamada quando o elemento vinculado é inserido no DOM.
+3. ```update()```: chamada quando o elemento pai do elemento vinculado é atualizado.
+4. ```unbind()```: chamada quando a diretiva é desvinculada de um elemento.
+5. ```componentUpdated()```: chamada quando o componente é atualizado.
+
+Exemplo:
+```js
+Vue.directive('nome-diretiva', {
+  bind: function(elemento) {
+    console.log('Fui vinculada a um elemento')
+  },
+  unbind: function(elemento) {
+    console.log('Fui desvinculada de um elemento')
+  }
+})
+```
+
+Para um exemplo veja o arquivo ```custom-directives.html``` na diretiva local ```capitalize```.
+
+> Observe que quando as diretivas fazem uso dessas funções citadas acima, elas deixam de ser chamadas como uma função e passam a ser tratadas como um objeto.
+> 
+> Isso nos ajuda a perceber que esses métodos são como se fosse um ciclo de vida das diretivas personalizadas, nos permitindo ter um maior controle de cada etapa das diretivas e dos nossos projetos.
+
 ### 041 - 40. Parâmetros para uma Diretiva Personalizada
 ### 042 - 41. Diretivas Personalizadas - Argumentos Dinâmicos
-### 043 - 42. Diretivas Personalizadas - Recebendo váriosvalores
+### 043 - 42. Diretivas Personalizadas - Recebendo vários valores
 ### 044 - Teste 2: Você se Lembra? Diretivas
 
 ## Seção 06: Desafio 1 - Criando Um Blog
 ### 045 - 43. Apresentação do Desafio
-### 046 - 44. Adicionando Vue ao projeto e criando lógicade login
+### 046 - 44. Adicionando Vue ao projeto e criando lógica de login
 ### 047 - 45. Carregando posts dinamicamente
-### 048 - 46. Limitando caracteres exibidos nopost
+### 048 - 46. Limitando caracteres exibidos no post
 ### 049 - 47. Código Final do Desafio
 
 ## Seção 07: Estilização
@@ -724,14 +750,14 @@ Vue.directive('white', {
 ### 070 - 66. Modificadores de Teclado
 ### 071 - 67. Modificadores de Teclas deSistema
 ### 072 - 68. Modificador .exact
-### 073 - 69. Modificadores de Botões doMouse
+### 073 - 69. Modificadores de Botões do Mouse
 ### 074 - 70. Aplicando mais de um evento
 ### 075 - Teste 5: Você se Lembra? Eventos
 
 ## Seção 10: Desafio 2 - Criando Uma Página De Login
 ### 076 - 71. Apresentação do Desafio
 ### 077 - 72. Adicionando o Vue e configurando transição
-### 078 - 73. Programando envio do formulário e mensagem desucesso
+### 078 - 73. Programando envio do formulário e mensagem de sucesso
 ### 079 - 74. Código Final do Projeto
 
 ## Seção 11: Componentes
@@ -774,7 +800,7 @@ Vue.directive('white', {
 ### 114 - 108. Praticando: Mutations
 ### 115 - 109. Actions
 ### 116 - 110. Praticando: Actions
-### 117 - 111. Praticando: Adaptando o v-model noVuex
+### 117 - 111. Praticando: Adaptando o v-model no Vuex
 ### 118 - 112. Módulos
 ### 119 - 113. Praticando: Módulos
 ### 120 - Teste 7: Você se Lembra? Vuex
@@ -790,7 +816,7 @@ Vue.directive('white', {
 ### 128 - 121. Praticando: Informando parâmetros para a rota de notícias
 ### 129 - 122. Criando rotas filhas
 ### 130 - 123. Criando nomes para as Rotas
-### 131 - 124. Praticando: Criando nomes para asRotas
+### 131 - 124. Praticando: Criando nomes para as Rotas
 ### 132 - 125. Criando nomes para as views
 ### 133 - 126. Definindo a Ordem das Rotas
 ### 134 - 127. Redirect e Alias
