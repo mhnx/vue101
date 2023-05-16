@@ -711,6 +711,43 @@ Para um exemplo veja o arquivo ```custom-directives.html``` na diretiva local ``
 > Isso nos ajuda a perceber que esses métodos são como se fosse um ciclo de vida das diretivas personalizadas, nos permitindo ter um maior controle de cada etapa das diretivas e dos nossos projetos.
 
 ### 041 - 40. Parâmetros para uma Diretiva Personalizada
+**Parâmetros**
+1. ```el```: Elemento que a diretiva está vinculada.
+2. ```binding```: Um objeto que traz informações úteis, como o valor informado para a diretiva (```value```), o valor antigo (```oldValue```) e os modificadores (```modifiers```).
+3. ```vnode```: O nó HTML virtual produzido pelo Vue.
+4. ```oldVnode```: O nó HTML virtual antigo (só terá um valor se estivermos nas funções ```update()``` ou ```componentUpdated()```).
+
+**Exemplo**
+```js
+Vue.directive('nome-diretiva', {
+  bind: function(el, binding) {
+    console.log(`O valor informado foi ${binding.value}`)
+  }
+})
+```
+
+**Todas as opções da variável ```binding```**
+1. ```name```: Nome da diretiva, sem o prefixo "v-".
+2. ```value```: Valor informado para a diretiva.
+3. ```oldValue```: Valor antigo da variável, se ela possuir.
+4. ```expression```: Expressão JavaScript informada para a diretiva.
+5. ```modifiers```: Um objeto com todos os modificadores informados. Eles são identificados por meio do ```.``` (ponto).  
+**Exemplo:**
+```html
+<p v-native.mod1> // Será retornado "{ mod1: true }"
+```
+6. ```arg```: Se informarmos algum argumento para a diretiva com ```:``` (dois-pontos), ele será exibido aqui.  
+**Exemplo:**
+```html
+<img v-blank:argumento> // Será retornado "argumento"
+```
+
+> Os modificadores vão ser muito usados quando usarmos as diretivas de evento.  
+> **Exemplo:**
+> ```html
+> <p v-on.prevent>
+> ```
+
 ### 042 - 41. Diretivas Personalizadas - Argumentos Dinâmicos
 ### 043 - 42. Diretivas Personalizadas - Recebendo vários valores
 ### 044 - Teste 2: Você se Lembra? Diretivas

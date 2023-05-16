@@ -17,6 +17,12 @@
     <p v-capitalize>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ipsa est, magnam vero repellendus odio perspiciatis autem recusandae qui consequatur facere provident, vitae, eligendi culpa labore tempora. Voluptatem, tempore deleniti?
     </p>
+    <h2 v-custom="'Informação'">¡Buenos días, mundo!</h2>
+    <h3 v-custom:parametro.mod1.mod2>ようこそ。</h3>
+    <h3 v-custom.mod1.mod2:parametro>ようこそ。</h3>
+    <p v-custom>
+      {{ name }}
+    </p>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
@@ -60,6 +66,20 @@
           },
           componentUpdated: function(el) {
             console.log('COMPONENT - O componente foi atualizado')
+          }
+        },
+        custom: {
+          inserted(el, binding, vnode) {
+            console.log(el)
+            console.log(binding)
+            console.log(vnode)
+
+            el.style.color = 'red'
+          },
+          update(el, binding, vnode, oldvnode) {
+            console.log(vnode, oldvnode)
+
+            el.style.textDecoration = 'underline'
           }
         }
       }
