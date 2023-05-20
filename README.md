@@ -749,6 +749,21 @@ Vue.directive('nome-diretiva', {
 > ```
 
 ### 042 - 41. Diretivas Personalizadas - Argumentos Dinâmicos
+Assim como nas diretivas ```v-bind``` e ```v-on```, podemos criar argumentos dinâmicos, vindos da instância Vue, e adicioná-los às nossas diretivas personalizadas.
+
+**Exemplo:**
+```html
+new Vue({
+  data: {
+    name: 'argumento'
+  }
+})
+
+<div v-star:[name]>May the Force be with you!</div>
+```
+
+> Para ver um exemplo, veja o arquivo ```custom-directives.html``` no commit **"Diretivas personalizadas - Argumentos dinâmicos"**, e, no console do navegador, altere os valores de ```argument``` e ```distance```: ```app.argument = 'top'``` ou ```app.distance = 350```.
+
 ### 043 - 42. Diretivas Personalizadas - Recebendo vários valores
 ### 044 - Teste 2: Você se Lembra? Diretivas
 
