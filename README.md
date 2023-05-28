@@ -790,6 +790,28 @@ new Vue({
 
 ## Seção 06: Desafio 1 - Criando Um Blog
 ### 045 - 43. Apresentação do Desafio
+**Conceitos que serão exercitados**
+1. Conceitos fundamentais
+2. Diretivas
+
+**Objetivos e tarefas**
+
+Objetivo: Criar um blog
+
+Tarefas:
+1. Adicionar o Vue.js no projeto;
+2. Criar lógica de login e logout no blog;
+3. Trazer os posts do blog de maneira dinâmica;
+4. Exibir o conteúdo do post apenas até 200 caracteres.
+
+> O arquivo ```desafio-1-blog.zip``` contém o código do projeto onde as tarefas acima deverão ser executadas.
+> 
+> As próximas aulas dessa seção conterão as respostas propostas pelo professor.
+> 
+> **É muito importante tentar realizar as tarefas antes de conferir as respostas para exercitar sua lógica de programação e sua compreensão dos conceitos do Vue apresentados até agora.**
+> 
+> Boa sorte e bons estudos!
+
 ### 046 - 44. Adicionando Vue ao projeto e criando lógica de login
 ### 047 - 45. Carregando posts dinamicamente
 ### 048 - 46. Limitando caracteres exibidos no post
