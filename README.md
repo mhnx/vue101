@@ -765,6 +765,27 @@ new Vue({
 > Para ver um exemplo, veja o arquivo ```custom-directives.html``` no commit **"Diretivas personalizadas - Argumentos dinâmicos"**, e, no console do navegador, altere os valores de ```argument``` e ```distance```: ```app.argument = 'top'``` ou ```app.distance = 350```.
 
 ### 043 - 42. Diretivas Personalizadas - Recebendo vários valores
+É possível receber mais de um valor para nossa diretiva.
+
+Para isso, basta informar um objeto para ela.
+
+**Exemplo**
+```js
+new Vue({
+  directives: {
+    edit-text: {
+      inserted: function(el, binding) {
+        console.log(binding.value.size)
+        console.log(binding.value.color)
+      }
+    }
+  }
+})
+```
+```html
+<h2 v-edit-text="{ size: 10, color: 'red' }">Vue.js is awesome!</h2>
+```
+
 ### 044 - Teste 2: Você se Lembra? Diretivas
 
 ## Seção 06: Desafio 1 - Criando Um Blog

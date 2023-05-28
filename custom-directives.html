@@ -23,7 +23,8 @@
     <p v-custom>
       {{ name }}
     </p> -->
-    <p v-position:[argument]="distance">Teste</p>
+    <p v-position="{ direction: argument, distance }">Teste</p>
+    <!-- <p v-position:[argument]="distance">Teste</p> -->
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
@@ -37,8 +38,8 @@
 
     function setDirection(element, binding) {      
       element.style.margin = 0
-      let direction = binding.arg.toLowerCase()
-      let value = binding.value
+      let direction = binding.value.direction.toLowerCase()
+      let value = binding.value.distance
 
       switch(direction) {
         case 'left':
