@@ -819,6 +819,28 @@ Tarefas:
 
 ## Seção 07: Estilização
 ### 050 - 48. Visão Geral da Seção
+**Por que a estilização dos sites é tão necessária?**
+
+Um site bem estilizado pode ser um diferencial para atrair e fidelizar usuários/clientes. O Vue nos permite estilizar nossos sites de maneira descomplicada.
+
+**Estilização em linha**
+```html
+<span v-bind:style="{ fontSize: tamanho + 'px' }">
+  Homem-Aranha
+</span>
+```
+
+**Estilização com classes**
+```html
+<ul>
+  <li v-bind:class="{ active: isActive }">
+    Homem-Morcego
+  </li>
+</ul>
+```
+
+> Observe no exemplo acima que o Vue nos permite aplicar uma classe de acordo com uma condição.
+
 ### 051 - 49. Estilos em linha usando objetos
 ### 052 - 50. Estilos com múltiplos valores
 ### 053 - 51. Estilos em linha usando arrays
